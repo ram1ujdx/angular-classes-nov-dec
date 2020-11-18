@@ -13,3 +13,9 @@
 ```
 npm install -g typescript
 ```
+
+* Angular
+
+```
+npm install -g @angular/cli
+```
