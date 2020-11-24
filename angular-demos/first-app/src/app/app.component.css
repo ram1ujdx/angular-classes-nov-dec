@@ -1,0 +1,12 @@
+header{
+    min-height: 100px;
+    background-color: gray;
+}
+main{
+    min-height: 550px;
+
+}
+footer{
+    min-height: 100px;
+    background-color: aliceblue;
+}

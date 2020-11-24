@@ -1,0 +1,8 @@
+<p>{{today}}</p>
+
+<!-- <p>{{5>6?'Yes':'No'}}</p> -->
+
+<input type="text" placeholder="Enter your name" id="txname"  [(ngModel)]="name" #tname>
+<button class="btn btn-info" [disabled]="today.getDay()<5" (click)="show(tname.value)" >OK</button>
+
+<h2>{{name}}</h2>
