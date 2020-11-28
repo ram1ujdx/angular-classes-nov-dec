@@ -1,0 +1,43 @@
+<h2>Enter Employee Information</h2>
+<form class="form-group" (submit)="addEmployee(f.value)" #f="ngForm">
+
+    <div>
+        <label for="empId">Enter ID</label>
+        <input type="number" name="employeeId" 
+                    id="empId" placeholder="Enter ID (eg - 1001121)" 
+                    ngModel
+                    class="form-control"
+                    required
+                    #empId="ngModel"
+                    [class.is-invalid]="empId.invalid && empId.touched"
+                    >
+    <small *ngIf="empId.invalid && empId.touched" class="text-danger">Employee ID is required</small>
+    </div>
+
+    <div>
+        <label for="empName">Enter Name</label>
+        <input type="text" name="employeeName" 
+                    id="empName" placeholder="Enter Name (eg - Steve Jobs)" 
+                    ngModel class="form-control"
+                    required>
+    </div>
+
+    <div>
+        <label for="email">Enter Email</label>
+        <input type="text" name="email" id="email"
+                 placeholder="Enter Email (eg - steve@xyz.com)" 
+                 ngModel class="form-control"
+                 required>
+    </div>
+
+    <div>
+        <label for="salary">Enter Salary</label>
+        <input type="number" name="salary" id="salary" 
+                    placeholder="Enter Salary (eg - 50000)" 
+                    ngModel class="form-control"
+                    required>
+    </div>
+
+    <button type="submit" [disabled]="f.invalid" class="btn btn-dark">Submit Details</button>
+
+</form>
