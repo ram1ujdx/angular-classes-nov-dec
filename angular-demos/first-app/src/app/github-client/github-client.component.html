@@ -1,0 +1,11 @@
+<h2>Github Profile Info</h2>
+<input type="text" placeholder="Enter User ID" #userId class="form-control">
+<button class="btn btn-info" (click)="showGithubInfo(userId.value)">Get Info</button>
+
+<div *ngIf="user">
+    <h3>User Name : {{user.name}}</h3>
+    <h3>Login : {{user.login}}</h3>
+    <h3>Location : {{user.location}}</h3>
+    <h3>Total Public Repos : {{user.public_repos}}</h3>
+    <img src={{user.avatar_url}} height="200px" width="200px">
+</div>

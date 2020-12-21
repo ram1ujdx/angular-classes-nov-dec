@@ -1,5 +1,5 @@
-<h2>Enter Employee Information</h2>
-<form class="form-group" (submit)="addEmployee(f.value)" #f="ngForm">
+<h2>Update Employee Information</h2>
+<form class="form-group" (submit)="updateEmployee()" #f="ngForm">
 
     <div>
         <label for="empId">Enter ID</label>
@@ -8,8 +8,10 @@
                     ngModel
                     class="form-control"
                     required
+                    [(ngModel)]="employee.employeeId"
                     #empId="ngModel"
                     [class.is-invalid]="empId.invalid && empId.touched"
+                    readonly
                     >
     <small *ngIf="empId.invalid && empId.touched" class="text-danger">Employee ID is required</small>
     </div>
@@ -19,6 +21,7 @@
         <input type="text" name="employeeName" 
                     id="empName" placeholder="Enter Name (eg - Steve Jobs)" 
                     ngModel class="form-control"
+                    [(ngModel)]="employee.employeeName"
                     required>
     </div>
 
@@ -27,6 +30,7 @@
         <input type="email" name="email" id="email"
                  placeholder="Enter Email (eg - steve@xyz.com)" 
                  ngModel class="form-control"
+                 [(ngModel)]="employee.email"
                  required>
     </div>
 
@@ -35,11 +39,13 @@
         <input type="number" name="salary" id="salary" 
                     placeholder="Enter Salary (eg - 50000)" 
                     ngModel class="form-control"
+                    [(ngModel)]="employee.salary"
                     required>
     </div>
 
-    <button type="submit" [disabled]="f.invalid" class="btn btn-dark">Submit Details</button>
+    <button type="submit" [disabled]="f.invalid" class="btn btn-dark">Update Employee</button>
 
     
 </form>
+
 

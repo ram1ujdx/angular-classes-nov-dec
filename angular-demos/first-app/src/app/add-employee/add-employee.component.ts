@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Employee } from '../Employee';
+import { EmployeeDataService } from '../employee-data.service';
+
 
 @Component({
   selector: 'app-add-employee',
@@ -8,16 +10,17 @@ import { Employee } from '../Employee';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  employeeList:Array<Employee>=[];
-
-  constructor() { }
+ 
+ 
+  constructor(private data:EmployeeDataService) { }
 
   ngOnInit(): void {
+   
   }
 
   addEmployee(employee:Employee){
-    this.employeeList.push(employee);
-    console.log(this.employeeList);
+    this.data.employeeList.push(employee);
+    alert("Employee Added Successfully")
   }
 
 }

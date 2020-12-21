@@ -1,0 +1,12 @@
+li{
+    display: inline-flex;
+}
+ul{
+    list-style-type: none;
+}
+.nav{
+    justify-content: right;
+   
+    justify-items: right;
+    justify-self: end;
+}

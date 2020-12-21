@@ -1,6 +1,7 @@
-<p appGreenify>{{today}}</p>
+<p appGreenify>{{today|date:'mediumDate'|uppercase}}</p>
 
-<!-- <p>{{5>6?'Yes':'No'}}</p> -->
+<!--
+<p>{{5>6?'Yes':'No'}}</p>
 
 <input type="text" placeholder="Enter your name" id="txname"  [(ngModel)]="name" #tname>
 <button class="btn btn-info" [disabled]="today.getDay()<0" (click)="addName(tname.value)" >Add Name</button>
@@ -12,9 +13,9 @@
     <h2 *ngIf="nameList.length">Person List</h2>
     <h2 *ngIf="!nameList.length" class="text-danger">No Names Are Present</h2>
     <ul>
-        <!-- <li *ngFor="let personName of nameList" [ngStyle]="{'background-color':getBackgroundColor(personName)}">
+         <li *ngFor="let personName of nameList" [ngStyle]="{'background-color':getBackgroundColor(personName)}">
             {{personName}}
-        </li> -->
+       
         
       
             <li *ngFor="let personName of nameList" [ngClass]="{style1:personName.length>5}">
@@ -33,3 +34,4 @@
 
     </ul>
 </div>
+ </li> -->
