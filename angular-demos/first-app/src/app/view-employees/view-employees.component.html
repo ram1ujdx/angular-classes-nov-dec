@@ -7,10 +7,10 @@
         <th>Salary</th>
         <th>Show Details</th>
     </tr>
-    <tr *ngFor="let employee of data.employeeList">
+    <tr *ngFor="let employee of employeeList">
         <td>{{employee.employeeId}}</td>
         <td>{{employee.employeeName}}</td>
-        <td>{{employee.email|uppercase|email:5:'###'}}</td>
+        <td>{{employee.email|uppercase|email:10:'...'}}</td>
         <td>{{employee.salary}}</td>
         <td><button class="btn btn-info" (click)="showEmployee(employee.employeeId)">Show</button></td>
     </tr>

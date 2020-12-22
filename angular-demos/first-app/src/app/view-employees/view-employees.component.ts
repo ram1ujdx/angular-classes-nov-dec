@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from '../Employee';
+import { EmployeeApiService } from '../employee-api.service';
 import { EmployeeDataService } from '../employee-data.service';
 
 
@@ -11,11 +12,14 @@ import { EmployeeDataService } from '../employee-data.service';
 })
 export class ViewEmployeesComponent implements OnInit {
 
- 
-  constructor(public data:EmployeeDataService, private router:Router) { }
+ employeeList:Array<Employee>;
+  constructor(private _employeeApiService:EmployeeApiService, private router:Router) { }
 
   ngOnInit(): void {
-   
+   this._employeeApiService.getAllEmployees().subscribe(
+      response=>this.employeeList=response,
+      error=>alert("No Data Found")
+   )
   }
 
   showEmployee(employeeId:number){

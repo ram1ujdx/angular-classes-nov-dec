@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Employee } from '../Employee';
+import { EmployeeApiService } from '../employee-api.service';
 import { EmployeeDataService } from '../employee-data.service';
 
 
@@ -12,15 +13,22 @@ export class AddEmployeeComponent implements OnInit {
 
  
  
-  constructor(private data:EmployeeDataService) { }
+  constructor(private _employeeApiService:EmployeeApiService) { }
 
   ngOnInit(): void {
    
   }
 
   addEmployee(employee:Employee){
-    this.data.employeeList.push(employee);
-    alert("Employee Added Successfully")
+    this._employeeApiService.addEmployee(employee).subscribe(
+      response=>{
+        console.log(response);
+        alert("Employee Added Successfully")
+      },
+      error=>alert("Error!! Employee Not Added")
+    )
   }
+
+ 
 
 }
